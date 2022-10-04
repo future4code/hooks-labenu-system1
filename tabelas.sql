@@ -4,6 +4,16 @@ CREATE TABLE Turma(
     modulo VARCHAR(255) DEFAULT 0
 );
 
+INSERT INTO Turma(id,nome)
+VALUES("2","Lary"),
+	("3","Paty"),
+    ("4","Ester");
+
+SELECT e.id,e.nome,e.email,e.data_nasc,e.turma_id,h.nome as hobby  FROM Estudante as e
+JOIN Estudante_hobby as eh on eh.estudante_id = e.id
+JOIN Hobby as h on eh.hobby_id = h.id;
+
+
 CREATE TABLE Estudante(
 	id VARCHAR(255) PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -12,6 +22,13 @@ CREATE TABLE Estudante(
     turma_id VARCHAR(255) NOT NULL,
     FOREIGN KEY (turma_id) REFERENCES Turma (id)
 );
+
+INSERT INTO Estudante(id,nome,email,data_nasc,turma_id)
+VALUES("1","Antonio", "toninho@lbn.com", "1990-08-19","2"),
+    ("2","Jose", "zeze@lbn.com", "1990-06-19","1");
+    
+	
+
 
 CREATE TABLE Hobby(
 	id VARCHAR(255) PRIMARY KEY,

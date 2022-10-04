@@ -16,7 +16,7 @@ export class Docente extends Usuario {
         email: string,
         data_nasc: string,
         turma_id: string,
-        private especialidades: string[]
+        private especialidade_id: string
     ) {
     super(
     id,
@@ -28,11 +28,11 @@ export class Docente extends Usuario {
     
     }
         public getEspecialidades() {
-        return this.especialidades
+        return this.especialidade_id
     }
 
-        public setEspecialidades(newEspecialidades: string[]) {
-        this.especialidades = newEspecialidades
+        public setEspecialidades(newEspecialidades: string) {
+        this.especialidade_id = newEspecialidades
     }
     
    }
