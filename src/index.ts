@@ -1,13 +1,17 @@
+import { createHobbie } from './endpoints/CreateHobbie';
+import { createDocente } from './endpoints/CreateDocente';
+import { createEstudante } from './endpoints/CreateEstudante';
+import { editEstudanteTurma } from './endpoints/EditEstudanteTurma';
+import { editDocenteTurma } from './endpoints/EditDocenteTurma';
+import { editModuloTurma } from './endpoints/EditModuloTurma';
+import { getEstudante } from './endpoints/GetEstudantes';
+import { getAllDocentes } from './endpoints/GetDocentes';
+import { createTurma } from './endpoints/CrateTurma';
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import { ping } from './endpoints/ping'
-import { createUser } from './endpoints/createUser'
-import { getUsers } from './endpoints/getUsers'
-import { createProduct } from './endpoints/createProduct'
-import { getProducts } from './endpoints/getProducts'
-import { createPurchase } from './endpoints/createPurchase'
-import { getUserPurchases } from './endpoints/getUserPurchases'
+import { getTurmasAtivas } from './endpoints/GetTurmasAtivas';
+
 
 dotenv.config()
 const app = express()
@@ -19,22 +23,22 @@ app.listen(process.env.PORT || 3003, () => {
   console.log(`Servidor rodando na porta ${process.env.PORT || 3003}`)
 })
 
-app.get("/ping", ping)
+app.get("/turmas", getTurmasAtivas)
 
-// Exercício 1 - Create users
-app.post("/users", createUser)
+app.get("/estudante", getEstudante)
 
-// Exercício 2 - Get users
-app.get("/users", getUsers)
+app.get("/docentes", getAllDocentes)
 
-// Exercício 3 - Create product
-app.post("/products", createProduct)
+app.post("/turma", createTurma)
 
-// Exercício 4 - Get products
-app.get("/products", getProducts)
+app.post("/estudante", createEstudante )
 
-// Exercício 5 - Create purchase
-app.post("/purchases", createPurchase)
+app.post("/docente", createDocente )
 
-// Exercício 6 - Get user purchases
-app.get("/users/:id/purchases", getUserPurchases)
+app.post("/hobbie", createHobbie )
+ 
+app.put("/turma", editModuloTurma)
+
+app.put("/estudante", editEstudanteTurma)
+
+app.put("/docente", editDocenteTurma)
