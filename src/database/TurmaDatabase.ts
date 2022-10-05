@@ -7,10 +7,7 @@ export class TurmaDatabase extends BaseDatabase{
 
     public async getTurmasAtivas(){
         const result = await BaseDatabase.connection.raw(`
-        SELECT t.id, t.nome, d.id as docente_id, e.id as estudante_id, t.modulo FROM Turma as t
-        JOIN Docente as d on d.turma_id = t.id
-        JOIN Estudante as e on e.turma_id = t.id
-        WHERE t.modulo > 0
+        SELECT * FROM Turma
         `);
         
 

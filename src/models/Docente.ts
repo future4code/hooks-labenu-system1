@@ -1,12 +1,18 @@
 import { Usuario } from "./Usuario"
-
+enum Especialidades{
+    JS = "JS",
+    REACT = "REACT",
+    CSS = "CSS",
+    TYPESCRIPT ="TYPESCRIPT",
+    "PROGRAMAÇÃO ORIENTADA A OBJETO" = "PROGRAMAÇÃO ORIENTADA A OBJETO"
+}
 export type TDocente = {
     id: string,
     nome: string
     email: string,
     data_nasc: string,
     turma_id: string,
-    especialidades: string[]
+    especialidades: Especialidades[]
 }
 
 export class Docente extends Usuario {
@@ -16,7 +22,7 @@ export class Docente extends Usuario {
         email: string,
         data_nasc: string,
         turma_id: string,
-        private especialidade_id: string
+        private especialidades: Especialidades[]
     ) {
     super(
     id,
@@ -28,11 +34,11 @@ export class Docente extends Usuario {
     
     }
         public getEspecialidades() {
-        return this.especialidade_id
+        return this.especialidades
     }
 
-        public setEspecialidades(newEspecialidades: string) {
-        this.especialidade_id = newEspecialidades
+        public setEspecialidades(newEspecialidades: Especialidades[]) {
+        this.especialidades = newEspecialidades
     }
     
    }

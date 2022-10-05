@@ -7,12 +7,10 @@ export class EstudanteDatabase extends BaseDatabase{
     public static TABLE_ESTUDANTE = "Estudante";
 
     public async getEstudante(nome:string){
-        const result = await BaseDatabase.connection.raw(`
-        SELECT *FROM Estudante
-        WHERE nome LIKE "%${nome}%"
-        `);
+        const result = await BaseDatabase.connection(EstudanteDatabase.TABLE_ESTUDANTE).select("*")
+        .where("nome", "like", `%${nome}%`)
 
-        return result[0]
+        return result
     }
 
    
