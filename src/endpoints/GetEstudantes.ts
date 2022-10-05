@@ -6,7 +6,11 @@ import { Request, Response } from "express";
 export const getEstudante = async(req:Request, res:Response)=>{
     let errorCode = 400
     try {
-        const nome = req.body.nome
+        let nome = req.query.nome as string
+
+        if(!nome){
+            nome = "%"
+        }
 
        
         const estudanteDatabase = new EstudanteDatabase

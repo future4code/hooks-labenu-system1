@@ -7,8 +7,8 @@ export const createDocente = async(req:Request, res: Response)=>{
     let errorCode = 400
     try {
         
-        const {nome,email,data_nasc,turma_id,especialidade_id} = req.body
-
+        let {nome,email,data_nasc,turma_id,especialidades} = req.body
+        
         if(!nome){
             errorCode = 406
             throw new Error("Digite o nome do estudante.")
@@ -29,7 +29,7 @@ export const createDocente = async(req:Request, res: Response)=>{
             throw new Error("Digite o id da turma do estudante.")
         }
 
-        if(!especialidade_id){
+        if(!especialidades){
             errorCode = 406
             throw new Error("Digite o id da especialidade do docente.")
         }
@@ -40,7 +40,7 @@ export const createDocente = async(req:Request, res: Response)=>{
             email,
             data_nasc,
             turma_id,
-            especialidade_id        
+            especialidades     
         )
 
         const docentedataBase = new DocenteDatabase
