@@ -1,17 +1,15 @@
 import { Turma } from './../models/Turma';
 import { BaseDatabase } from "./BaseDatabase";
 
-
 export class TurmaDatabase extends BaseDatabase{
     public static TABLE_TURMA = "Turma";
 
     public async getTurmasAtivas(){
-        const result = await BaseDatabase.connection.raw(`
-        SELECT * FROM Turma
-        `);
-        
+        const result = await BaseDatabase.connection(TurmaDatabase.TABLE_TURMA)
+        .select()
+        .where("modulo",">","0")
 
-        return result[0]
+        return result
     }
 
     public async createTurma(turma: Turma){
