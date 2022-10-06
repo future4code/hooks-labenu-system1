@@ -7,13 +7,17 @@ export type Tusuario = {
 }
 
 export class Usuario {
+    private id?: string
     constructor(
-        private id: string,
         private nome: string,
         private email: string,
         private data_nasc: string,
         private turma_id: string
-    ) {}
+    ) {
+        if(!this.id){
+            this.id = this.id = String(Date.now())
+        }
+    }
 
     public getId() {
         return this.id

@@ -7,7 +7,6 @@ enum Especialidades{
     "PROGRAMAÇÃO ORIENTADA A OBJETO" = "PROGRAMAÇÃO ORIENTADA A OBJETO"
 }
 export type TDocente = {
-    id: string,
     nome: string
     email: string,
     data_nasc: string,
@@ -17,7 +16,6 @@ export type TDocente = {
 
 export class Docente extends Usuario {
     constructor(
-        id: string,
         nome: string,
         email: string,
         data_nasc: string,
@@ -25,7 +23,6 @@ export class Docente extends Usuario {
         private especialidades: Especialidades[]
     ) {
     super(
-    id,
     nome,
     email,
     data_nasc,
