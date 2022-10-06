@@ -10,7 +10,7 @@ export class EstudantesCT{
     async createEstudante (req:Request, res: Response) : Promise<void >{
         try {
     
-            const {nome,email,data_nasc,turma_id,hobby_id} = req.body
+            const {nome,email,data_nasc,turma_id,hobby_name} = req.body
     
             if(!nome){
                 errorCode = 406
@@ -32,7 +32,7 @@ export class EstudantesCT{
                 throw new Error("Digite o id da turma do estudante.")
             }
     
-            if(!hobby_id){
+            if(!hobby_name){
                 errorCode = 406
                 throw new Error("Digite o hobbie do estudante.")
             }
@@ -42,7 +42,7 @@ export class EstudantesCT{
                 email,
                 data_nasc,
                 turma_id,
-                hobby_id            
+                hobby_name            
             )
     
            

@@ -15,7 +15,7 @@ export class Estudante extends Usuario {
         email: string,
         data_nasc: string,
         turma_id: string,
-        private hobby_id: string
+        private hobby_name: string
     ) {
     super(
     nome,
@@ -26,11 +26,11 @@ export class Estudante extends Usuario {
     
     }
         public getHobbies() {
-        return this.hobby_id
+        return this.hobby_name
     }
 
         public setHobbies(newHobby_id: string) {
-        this.hobby_id = newHobby_id
+        this.hobby_name = newHobby_id
     }
     
    }

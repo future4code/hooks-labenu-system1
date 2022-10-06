@@ -12,6 +12,7 @@ CREATE TABLE Estudante(
     email VARCHAR(255) NOT NULL UNIQUE,
     data_nasc VARCHAR(30) NOT NULL,
     turma_id VARCHAR(255) NOT NULL,
+    hobby_name VARCHAR(100) NOT NULL
     FOREIGN KEY (turma_id) REFERENCES Turma (id)
 );
 
@@ -23,7 +24,7 @@ CREATE TABLE Docente(
     data_nasc  VARCHAR(30) NOT NULL,
     turma_id VARCHAR(255) NOT NULL,
     especialidades enum("JS" , "REACT", "CSS","TYPESCRIPT","PROGRAMAÇÃO ORIENTADA A OBJETO"),
-    FOREIGN KEY (turma_id) REFERENCES Turma (id)
+    FOREIGN KEY (turma_id) REFERENCES Turma(id)
 );
 
 */

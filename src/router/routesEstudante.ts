@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { EstudantesCT } from "../endpoints/EstudantesController";
+import { EstudantesCT } from "../Controller/EstudantesController";
 
 
 const routerEstudantes = Router()

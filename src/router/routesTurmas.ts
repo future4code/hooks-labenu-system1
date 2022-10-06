@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { DocentesCT } from "../endpoints/DocentesController";
-import { EstudantesCT } from "../endpoints/EstudantesController";
-import { TurmasCT } from "../endpoints/TurmasController";
+import { DocentesCT } from "../Controller/DocentesController";
+import { EstudantesCT } from "../Controller/EstudantesController";
+import { TurmasCT } from "../Controller/TurmasController";
 
 
 const routerTurmas = Router()
