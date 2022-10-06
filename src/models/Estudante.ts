@@ -11,7 +11,6 @@ export type TEstudante = {
 
 export class Estudante extends Usuario {
     constructor(
-        id: string,
         nome: string,
         email: string,
         data_nasc: string,
@@ -19,7 +18,6 @@ export class Estudante extends Usuario {
         private hobby_id: string
     ) {
     super(
-    id,
     nome,
     email,
     data_nasc,
