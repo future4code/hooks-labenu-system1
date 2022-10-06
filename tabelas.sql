@@ -1,3 +1,33 @@
+
+/*NOVAS TABELAS
+ CREATE TABLE Turma(
+	id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255),
+    modulo VARCHAR(255) DEFAULT 0
+);
+
+CREATE TABLE Estudante(
+	id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    data_nasc VARCHAR(30) NOT NULL,
+    turma_id VARCHAR(255) NOT NULL,
+    FOREIGN KEY (turma_id) REFERENCES Turma (id)
+);
+
+
+CREATE TABLE Docente(
+	id VARCHAR(255) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    data_nasc  VARCHAR(30) NOT NULL,
+    turma_id VARCHAR(255) NOT NULL,
+    especialidades enum("JS" , "REACT", "CSS","TYPESCRIPT","PROGRAMAÇÃO ORIENTADA A OBJETO"),
+    FOREIGN KEY (turma_id) REFERENCES Turma (id)
+);
+
+*/
+
 CREATE TABLE Turma(
 	id VARCHAR(255) PRIMARY KEY,
     nome VARCHAR(255),
