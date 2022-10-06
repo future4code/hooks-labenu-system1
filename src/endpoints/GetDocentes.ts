@@ -1,7 +1,6 @@
 import { DocenteDatabase } from './../database/DocenteDatabase';
 import { Request, Response } from "express";
 
-
 export const getAllDocentes = async (req: Request, res: Response)=>{
     let errorCode = 400
     try {

@@ -2,7 +2,6 @@ import { TurmaDatabase } from './../database/TurmaDatabase';
 import { Request, Response } from "express";
 import { Turma } from '../models/Turma';
 
-
 export const editModuloTurma = async (req:Request, res: Response)=>{
     let errorCode = 400
     try {

@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { HobbieDatabase } from "../database/HobbieDatabase";
 import { Hobbie } from "../models/Hobbie";
 
-
 export const createHobbie = async (req: Request, res:Response)=>{
     let errorCode = 400
     try {

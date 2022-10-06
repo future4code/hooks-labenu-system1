@@ -1,4 +1,3 @@
-import { Usuario } from './../models/Usuario';
 import { EstudanteDatabase } from './../database/EstudanteDatabase';
 import { Estudante } from './../models/Estudante';
 import { Request, Response } from "express";
@@ -47,8 +46,6 @@ export const createEstudante = async(req:Request, res: Response)=>{
         const estudanteDatabase = new EstudanteDatabase
         await estudanteDatabase.createEstudante(estudante)
 
-
-        
         res.status(200).send({message:"Estudante registrado", estudante: estudante})
 
     } catch (error) {
