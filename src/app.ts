@@ -16,5 +16,6 @@ app.use("/" , routerEstudantes)
 app.use("/" , routerDocente)
 app.use("/" , routerTurmas)
 
+//DOCUMENTAÇÃO : https://documenter.getpostman.com/view/21068479/2s83zfR5Ne
 
 export default app
