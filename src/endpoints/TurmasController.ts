@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { TurmaDatabase } from "../database/TurmaDatabase";
 import { Turma } from "../models/Turma";
+import { v4 as generateId } from "uuid";
 
 const turmaDatabase = new TurmaDatabase
 let errorCode = 400
@@ -16,6 +17,7 @@ export class TurmasCT{
         }
 
          const turma = new Turma(
+            generateId(),
             nome,
             0
         )
@@ -47,6 +49,7 @@ export class TurmasCT{
         const turma1 = result[0]
               
         const turma = new Turma(
+            turma1.id,
             turma1.nome,
             turma1.modulo
         )
