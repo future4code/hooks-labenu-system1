@@ -7,8 +7,8 @@ export type Tusuario = {
 }
 
 export class Usuario {
-    private id?: string
     constructor(
+        private id: string,
         private nome: string,
         private email: string,
         private data_nasc: string,
