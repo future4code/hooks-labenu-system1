@@ -10,7 +10,6 @@ export const getEstudante = async(req:Request, res:Response)=>{
             nome = "%"
         }
 
-       
         const estudanteDatabase = new EstudanteDatabase
         const result = await estudanteDatabase.getEstudante(nome)
 

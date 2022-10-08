@@ -2,6 +2,7 @@
 import { EstudanteDatabase } from '../database/EstudanteDatabase';
 import { Request, Response } from "express";
 import { Estudante } from '../models/Estudante';
+import { v4 as generateId } from 'uuid';
 
 
 let errorCode = 400
@@ -38,6 +39,7 @@ export class EstudantesCT{
             }
             
             const estudante = new Estudante(
+                generateId(),
                 nome,
                 email,
                 data_nasc,

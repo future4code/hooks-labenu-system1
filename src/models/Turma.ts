@@ -7,8 +7,8 @@ export type TTurma = {
 }
 
 export class Turma {
-    private id?: string
     constructor(
+        private id: string,
         private nome: string,
         private modulo: number
     ){

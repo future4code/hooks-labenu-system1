@@ -1,6 +1,4 @@
 import { Router } from "express";
-import { DocentesCT } from "../endpoints/DocentesController";
-import { EstudantesCT } from "../endpoints/EstudantesController";
 import { TurmasCT } from "../endpoints/TurmasController";
 
 const routerTurmas = Router()
